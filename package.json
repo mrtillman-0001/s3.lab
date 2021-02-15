@@ -1,0 +1,23 @@
+{
+  "name": "s3.lab",
+  "version": "1.0.0",
+  "description": "Object storage built to store and retrieve any amount of data from anywhere",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrtillman-0001/s3.lab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrtillman-0001/s3.lab/issues"
+  },
+  "homepage": "https://github.com/mrtillman-0001/s3.lab#readme",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.5.0"
+  }
+}
