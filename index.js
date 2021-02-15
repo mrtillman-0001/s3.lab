@@ -28,7 +28,6 @@ https.request(imageUrl, async response => {
     Key: `u/${key}.${ext}`,
     ContentType: contentType,
     ContentLength: contentLength,
-    CacheControl: "max-age=0",
     Body: response
   })
 
