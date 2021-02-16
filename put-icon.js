@@ -8,11 +8,11 @@ const {
   PutObjectCommand
 } = require("@aws-sdk/client-s3");
 
-module.exports.putIcon = function putIcon(imageUrl, key){
+module.exports.putIcon = function putIcon(imageUrl, timestamp){
 
-  const _key = key ? key : (new Date()).getTime().toString();
+  const _timestamp = timestamp ? timestamp : (new Date()).getTime().toString();
 
-  console.log("put icon: ", _key);
+  console.log("put icon: ", _timestamp);
 
   https.request(imageUrl, async response => {
     const client = new S3Client({
@@ -26,17 +26,15 @@ module.exports.putIcon = function putIcon(imageUrl, key){
     const command = new PutObjectCommand({
       Bucket: "icons.avatarbox.io",
       ACL: "public-read",
-      Key: `u/${_key}.${ext}`,
+      Key: `u/${_timestamp}.${ext}`,
       ContentType: contentType,
       ContentLength: contentLength,
       Body: response
     })
 
-    console.log(`https://icons.avatarbox.io/u/${_key}.${ext}`);
+    console.log(`https://icons.avatarbox.io/u/${_timestamp}.${ext}`);
 
     const result = await client.send(command);
-
-    //console.log(result);
 
   }).end();
 

@@ -1,6 +1,21 @@
-const key = "1613431358784";
-//const imageUrl = "https://en.gravatar.com/userimage/150849239/cd73b8e804398c2709453d36fba41ede.jpg?size=450";
-const imageUrl = "https://en.gravatar.com/userimage/150849239/be08521422702478ece4e7b10ad7b9a9.jpg?size=450";
 const { putIcon } = require('./put-icon');
+const { deleteIcon } = require('./delete-icon');
 
-putIcon(imageUrl, key);
+/* */
+// save icon 
+const imageUrl = "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=450";
+putIcon(imageUrl);
+// */
+
+/** /
+// update icon
+const imageUrl = "https://s.gravatar.com/avatar/2c76114522b1f756a8e0cbc527710628?s=450";
+const timestamp = "1613432690190";
+putIcon(imageUrl, timestamp);
+// */
+
+/** /
+// delete icon
+const key = "u/1613432690190.png";
+deleteIcon(key);
+// */
