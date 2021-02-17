@@ -24,14 +24,14 @@ const imageUrl = "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d
 putIcon(imageUrl);
 ```
 
-After save (and/or update), the image url from the console output will resemble `https://icons.avatarbox.io/u/0000000000000.png`.
+After save (and/or update), the image url from the console output will resemble `https://icons.avatarbox.io/u/1613432690190`.
 
 ## Update
 
 ```js
 // update icon
 const imageUrl = "https://s.gravatar.com/avatar/2c76114522b1f756a8e0cbc527710628?s=450";
-const timestamp = "0000000000000";
+const timestamp = "1613432690190";
 putIcon(imageUrl, timestamp);
 ```
 
@@ -39,19 +39,19 @@ After update,
 
 Do this:
 
-`https://icons.avatarbox.io/u/0000000000000.png?v=1`
+`https://icons.avatarbox.io/u/1613432690190?v=1`
 
 Not this:
 
-`https://icons.avatarbox.io/u/0000000000000.png`
+`https://icons.avatarbox.io/u/1613432690190`
 
-CloudFront caches the S3 images for 24 hours, so after update you must rely on [Cache Busting](https://www.keycdn.com/support/what-is-cache-busting) to force the latest image to be downloaded.
+CloudFront caches the S3 images for a moment, so after update you must rely on [Cache Busting](https://www.keycdn.com/support/what-is-cache-busting) to force down the latest image.
 
 ## Delete
 
 ```js
 // delete icon
-const key = "u/1613432690190.png";
+const key = "u/1613432690190";
 deleteIcon(key);
 ```
 

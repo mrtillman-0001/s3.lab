@@ -26,13 +26,13 @@ module.exports.putIcon = function putIcon(imageUrl, timestamp){
     const command = new PutObjectCommand({
       Bucket: "icons.avatarbox.io",
       ACL: "public-read",
-      Key: `u/${_timestamp}.${ext}`,
+      Key: `u/${_timestamp}`,
       ContentType: contentType,
       ContentLength: contentLength,
       Body: response
     })
 
-    console.log(`https://icons.avatarbox.io/u/${_timestamp}.${ext}`);
+    console.log(`https://icons.avatarbox.io/u/${_timestamp}`);
 
     const result = await client.send(command);
 
